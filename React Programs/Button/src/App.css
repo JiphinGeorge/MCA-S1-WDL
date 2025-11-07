@@ -1,0 +1,73 @@
+/* Reset defaults to ensure full width and height */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Fullscreen flex container */
+.app-container {
+  display: flex;
+  justify-content: center;   /* Horizontally center */
+  align-items: center;       /* Vertically center */
+  min-height: 100vh;         /* Make sure it takes full viewport height */
+  width: 100%;               /* Full width */
+  background: linear-gradient(100deg, rgb(42, 4, 168), #cfdef3);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Center card with buttons */
+.button-wrapper {
+  text-align: center;
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  background: linear-gradient(110deg, #fafafa, rgb(45, 4, 182));
+  max-width: 90%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on the card */
+.button-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Title styling */
+.button-wrapper h2 {
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+/* Button alignment */
+.button-wrapper button {
+  display: block;
+  margin: 12px auto;
+  width: 80%;
+  max-width: 250px;
+  transition: transform 0.15s ease;
+}
+
+/* Button hover animation */
+.button-wrapper button:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 600px) {
+  .button-wrapper {
+    padding: 30px 20px;
+  }
+
+  .button-wrapper h2 {
+    font-size: 1.2rem;
+  }
+
+  .button-wrapper button {
+    width: 100%;
+    font-size: 14px;
+  }
+}

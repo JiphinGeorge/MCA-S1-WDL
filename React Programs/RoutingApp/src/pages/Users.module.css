@@ -1,0 +1,20 @@
+.container {
+  background-color: #e6ffe6;
+  padding: 20px;
+  border-radius: 8px;
+  color: #333;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #006400;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,11 @@
+.container {
+  background-color: #f5f5dc;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: #333;
+}
+
+h1 {
+  color: #8b0000;
+}
