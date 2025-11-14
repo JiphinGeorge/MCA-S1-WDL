@@ -62,7 +62,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h2>Task Tracker</h2>
+      <h2>Task Tracker App</h2>
 
       {/* Task input */}
       <TaskInput onAddTask={addTask} />
