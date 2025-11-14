@@ -1,25 +1,32 @@
 .button {
-  padding: 8px 16px;
+  padding: 10px 18px;
   background-color: #007bff;
-  color: white;
+  color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.2s;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
   background-color: #0056b3;
+  transform: translateY(-1px);
 }
 
+/* Delete / Danger button */
 .delete-btn {
   background-color: #dc3545;
 }
 
 .delete-btn:hover {
   background-color: #a71d2a;
+  transform: translateY(-1px);
 }
 
+/* Active filter button */
 .active-filter {
   background-color: #28a745;
 }

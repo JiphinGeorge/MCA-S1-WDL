@@ -5,7 +5,7 @@ import Button from "./components/Button";
 import "./App.css";
 
 function App() {
-  // Load tasks from localStorage
+  // Initialize tasks from localStorage
   const [tasks, setTasks] = useState(() => {
     const saved = localStorage.getItem("tasks");
     return saved ? JSON.parse(saved) : [];
@@ -13,14 +13,15 @@ function App() {
 
   const [filter, setFilter] = useState("All");
 
-  // Save tasks to localStorage whenever tasks change
+  // Persist tasks to localStorage whenever tasks change
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
   // Add a new task
   const addTask = (name) => {
-    setTasks([...tasks, { id: Date.now(), name, completed: false }]);
+    if (!name.trim()) return; // Prevent empty task
+    setTasks([...tasks, { id: Date.now(), name: name.trim(), completed: false }]);
   };
 
   // Delete a task
@@ -39,8 +40,9 @@ function App() {
 
   // Edit task name
   const editTask = (id, newName) => {
+    if (!newName.trim()) return;
     setTasks(
-      tasks.map((task) => (task.id === id ? { ...task, name: newName } : task))
+      tasks.map((task) => (task.id === id ? { ...task, name: newName.trim() } : task))
     );
   };
 
@@ -49,24 +51,23 @@ function App() {
     setTasks(tasks.filter((task) => !task.completed));
   };
 
-  // Filter tasks based on filter
+  // Filter tasks
   const filteredTasks = tasks.filter((task) => {
     if (filter === "Completed") return task.completed;
     if (filter === "Pending") return !task.completed;
     return true;
   });
 
-  // Count remaining tasks
   const remainingTasks = tasks.filter((task) => !task.completed).length;
 
   return (
     <div className="app-container">
       <h2>Task Tracker</h2>
 
-      {/* Input to add new tasks */}
+      {/* Task input */}
       <TaskInput onAddTask={addTask} />
 
-      {/* Filter buttons */}
+      {/* Filters */}
       <div className="filter-buttons">
         {["All", "Pending", "Completed"].map((f) => (
           <Button
@@ -79,16 +80,14 @@ function App() {
       </div>
 
       {/* Clear Completed button */}
-      <Button
-        label="Clear Completed"
-        onClick={clearCompleted}
-        className="delete-btn"
-      />
+      {tasks.some((task) => task.completed) && (
+        <Button label="Clear Completed" onClick={clearCompleted} className="delete-btn" />
+      )}
 
       {/* Task counter */}
       <p className="task-count">{remainingTasks} task(s) remaining</p>
 
-      {/* Task List */}
+      {/* Task list */}
       <TaskList
         tasks={filteredTasks}
         onDelete={deleteTask}

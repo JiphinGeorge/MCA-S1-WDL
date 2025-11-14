@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "./Button";
+import "./TaskItem.css";
 
 function TaskItem({ task, onDelete, onToggleComplete, onEdit }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -12,18 +13,7 @@ function TaskItem({ task, onDelete, onToggleComplete, onEdit }) {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "8px 12px",
-        background: "#f0f0f0",
-        borderRadius: "4px",
-        marginBottom: "8px",
-        textDecoration: task.completed ? "line-through" : "none",
-      }}
-    >
+    <div className={`task-item ${task.completed ? "completed" : ""}`}>
       {/* Task Name / Edit Input */}
       {isEditing ? (
         <input
@@ -31,18 +21,18 @@ function TaskItem({ task, onDelete, onToggleComplete, onEdit }) {
           value={editedName}
           onChange={(e) => setEditedName(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSave()}
-          style={{ flex: 1, marginRight: "8px", padding: "4px" }}
+          className="task-edit-input"
         />
       ) : (
         <span
           onDoubleClick={() => setIsEditing(true)}
-          style={{ flex: 1, cursor: "pointer" }}
+          className="task-name"
         >
           {task.name}
         </span>
       )}
 
-      <div style={{ display: "flex", gap: "8px" }}>
+      <div className="task-buttons">
         <Button
           label={task.completed ? "Undo" : "Complete"}
           onClick={() => onToggleComplete(task.id)}

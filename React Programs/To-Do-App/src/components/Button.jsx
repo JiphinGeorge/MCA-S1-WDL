@@ -1,8 +1,12 @@
 import "./Button.css";
 
-function Button({ label, onClick, className = "" }) {
+function Button({ label, onClick, className = "", type = "button" }) {
   return (
-    <button className={`button ${className}`} onClick={onClick}>
+    <button
+      type={type}               // default button type to prevent accidental form submit
+      className={`button ${className}`}
+      onClick={onClick}
+    >
       {label}
     </button>
   );
