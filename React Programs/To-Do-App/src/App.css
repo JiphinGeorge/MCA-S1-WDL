@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #bcdaf8;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 24px;
+}
+.app-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.task-count {
+  margin: 8px 0;
+  font-weight: bold;
+}
+
+
+.active-filter {
+  background-color: #28a745 !important; /* Green for active filter */
+}
+
+/* Task Count */
+.task-count {
+  color: #555;
+  margin-bottom: 16px;
+}
+
+/* Delete button specific styling */
+.delete-btn {
+  background-color: #dc3545;
+}
+.delete-btn:hover {
+  background-color: #a71d2a;
+}
+abody {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.active-filter {
+  background-color: #28a745 !important;
+}
+
+.task-count {
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #a71d2a;
+}

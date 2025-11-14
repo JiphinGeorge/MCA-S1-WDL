@@ -1,0 +1,103 @@
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body styling */
+body {
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Container for the app */
+.app-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* App title */
+.app-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Input field styling */
+input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 3px #007bff;
+}
+
+/* Task list styling */
+.task-list {
+  margin-top: 15px;
+}
+
+/* Task item styling */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  transition: background 0.2s;
+}
+
+.task-item.completed {
+  text-decoration: line-through;
+  color: #999999;
+  background-color: #e9ecef;
+}
+
+/* Task counter */
+.task-count {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* Filter buttons container */
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* Button hover effects already handled in Button.css */
+
+/* Responsive */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 20px;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+  }
+
+  .button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
