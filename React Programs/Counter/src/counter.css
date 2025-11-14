@@ -1,0 +1,21 @@
+/* Counter.css */
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+  background-color: rgb(8, 79, 79);
+}
+
+.button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #951212;
+}
+

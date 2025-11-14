@@ -1,49 +1,33 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import './counter.css'; 
 
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-    // Initialize the component's state
-    this.state = {
-      count: 0
-    };
-  }
+const Counter = () => {
+  
+  const [count, setCount] = useState(0);
 
-  // Method to increment count
-  increment = () => {
-    this.setState((prevState) => ({ count: prevState.count + 1 }));
+  
+  useEffect(() => {
+    console.log(`Count has changed to: ${count}`);
+  }, [count]); 
+  
+  const increment = () => {
+    setCount(count + 1);
   };
 
-  // Method to decrement count
-  decrement = () => {
-    this.setState((prevState) => ({ count: prevState.count - 1 }));
+  const decrement = () => {
+    setCount(count - 1);
   };
 
-  render() {
-    return (
-      <div style={styles.container}>
-        <h2>Counter: {this.state.count}</h2>
-        <div>
-          <button style={styles.button} onClick={this.increment}>Increment</button>
-          <button style={styles.button} onClick={this.decrement}>Decrement</button>
-        </div>
+  return (
+
+    <div className="container">
+      <h2>Counter: {count}</h2>
+      <div>
+        <button className="button" onClick={increment}>Increment</button>
+        <button className="button" onClick={decrement}>Decrement</button>
       </div>
-    );
-  }
-}
-
-// Simple inline styles for presentation
-const styles = {
-  container: {
-    textAlign: 'center',
-    marginTop: '50px',
-    fontFamily: 'Arial, sans-serif'
-  },
-  button: {
-    margin: '5px',
-    padding: '10px 20px',
-    fontSize: '16px'
-  }
+    </div>
+  );
 };
 
 export default Counter;
